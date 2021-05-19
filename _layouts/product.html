@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<!-- Post Featured Image -->
+<div class="text-center mx-auto mb-5">
+  <img class="featured-image text-center mx-auto rounded" src="{{ site.baseurl }}/products/{{ page.handle }}.png" alt="{{ page.title }}">
+</div>
+<!-- End Featured Image -->
+
+<div class="col-lg-8 mx-auto">
+
+  <div class="mainheading">
+    <h1 class="posttitle">"{{ page.title }}"</h1>
+  </div>
+
+  <div class="article-post serif-font">
+    {{content}}
+  </div>
+
+	<div class="article-post serif-font">
+		You can order your very own at: <a href="https://www.shoptruthkind.com" target='blank'>ShopTruthKind.com</a>
+		<br>
+		Or get this design on a custom product at <a href="https://www.redbubble.com/people/truthkind/shop" target='blank'>Red Bubble</a>
+	</div>
+
+  {% if page.comments == true %}
+  <div id="comments">
+      {% include disqus.html %}
+  </div>
+  {% endif %}
+
+</div>

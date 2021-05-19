@@ -1,6 +1,42 @@
-<html>
-<head><title>TruthKind.com</title></head>
-<body>
-<h1>Coming Soon!</h1>
-</body>
-</html>
+---
+title: Home
+layout: default
+background: '/img/bg-index.jpg'
+---
+
+<!-- Home Intro
+================================================== -->
+{% if page.url == "/" %}
+<div class="rounded mb-5 hero">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-md-6">
+      <h1 class="font-weight-bold mb-4 serif-font">SPEAK TRUTH.<br>BE KIND.</h1>
+      <p class="lead mb-4">Our mission is to encourage truth and kindness through boldly displayed positive messaging.<br>Go ahead and wear your heart on your sleeve!</p>
+      <a href="{{site.baseurl}}/about" class="btn btn-dark text-white px-5 btn-lg">About Us</a>
+    </div>
+    <div class="col-md-6 text-right pl-0 pl-lg-4">
+      <img class="intro" height="500" src="{{site.baseurl}}/assets/images/bbq_group.png">
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- product list List with Sidebar (except featured)
+================================================== -->
+<section class="row">
+    <div class="row">
+			{% assign products = site.pages | where: 'layout', "product" %}
+      {% for product in products %}
+
+			<div class="col-md-4 ">
+        {% include prodbox.html %}
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Pagination -->
+    <div class="bottompagination">
+      <span class="navigation" role="navigation">
+          {% include pagination.html %}
+      </span>
+    </div>
+</section>

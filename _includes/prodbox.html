@@ -1,0 +1,11 @@
+<!-- begin prod -->
+<div class="card">
+    <a href="{{ site.baseurl }}/products/{{ product.handle }}">
+        <img class="rounded mb-4" src="{{ site.baseurl }}/products/{{ product.handle }}.png" alt="{{ product.title }}">
+    </a>
+    <div class="card-block">
+        <h2 class="card-title h4 serif-font"><a href="{{ site.baseurl }}/products/{{ product.handle }}">{{ product.title }}</a></h2>
+        <p class="card-text text-muted">{{ product.description | truncatewords:15 }}</p>
+    </div>
+</div>
+<!-- end prod -->
